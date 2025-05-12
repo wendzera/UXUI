@@ -1,0 +1,411 @@
+/* Estilos gerais */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos para a página Home */
+.home {
+  background: #4133ff;
+  border: 1px solid #000000;
+  height: 1575px;
+  position: relative;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.rectangle-24 {
+  background: rgba(217, 217, 217, 0.51);
+  border-radius: 30px;
+  width: 162px;
+  height: 48px;
+  position: absolute;
+  left: 349px;
+  top: 275px;
+  cursor: pointer;
+}
+
+.frame-1 {
+  border-radius: 30px;
+  width: 307px;
+  height: 282px;
+  position: absolute;
+  left: 21px;
+  top: 396px;
+}
+
+.f-0-c-8890-f-bdae-4541-9-c-8-a-358-efde-7-e-879-1 {
+  width: 329px;
+  height: 188px;
+  position: absolute;
+  left: 0px;
+  top: 50px;
+  object-fit: cover;
+  aspect-ratio: 329/188;
+}
+
+.seja-bem-vindo-a-plataforma-de-cursos {
+  color: #000000;
+  text-align: left;
+  font-size: 24px;
+  font-weight: 400;
+  position: absolute;
+  left: 30px;
+  top: 220px;
+  width: 680px;
+  height: 55px;
+}
+
+.image {
+  width: 330px;
+  height: 183px;
+  position: absolute;
+  left: 370px;
+  top: 449px;
+  object-fit: cover;
+}
+
+.login {
+  color: #080707;
+  text-align: left;
+  font-size: 24px;
+  font-weight: 400;
+  position: absolute;
+  left: 400px;
+  top: 284px;
+  cursor: pointer;
+}
+
+.rectangle-3 {
+  background: rgba(217, 217, 217, 0.32);
+  width: 680px;
+  height: 238px;
+  position: absolute;
+  left: 20px;
+  top: 23px;
+}
+
+.frame {
+  width: 98px;
+  height: 96px;
+  position: absolute;
+  left: 572px;
+  top: 46px;
+  overflow: visible;
+}
+
+.rectangle-4, .rectangle-5, .rectangle-6, .rectangle-7 {
+  border-radius: 15px;
+  height: 54px;
+  position: absolute;
+  top: 694px;
+  cursor: pointer;
+}
+
+.rectangle-4 {
+  background: rgba(217, 217, 217, 0.45);
+  width: 154px;
+  left: 20px;
+}
+
+.rectangle-5 {
+  background: rgba(217, 217, 217, 0.5);
+  width: 154px;
+  left: 195px;
+}
+
+.rectangle-6 {
+  background: rgba(217, 217, 217, 0.46);
+  width: 154px;
+  left: 370px;
+}
+
+.rectangle-7 {
+  background: rgba(217, 217, 217, 0.51);
+  width: 154px;
+  left: 546px;
+}
+
+.contato, .cursos, .noticias, .novidades {
+  color: #000000;
+  text-align: left;
+  font-size: 24px;
+  font-weight: 400;
+  position: absolute;
+  cursor: pointer;
+}
+
+.contato {
+  left: 547px;
+  top: 707px;
+  width: 154px;
+  height: 48px;
+}
+
+.cursos {
+  left: 20px;
+  top: 705px;
+  width: 154px;
+  height: 48px;
+}
+
+.noticias {
+  left: 226px;
+  top: 705px;
+}
+
+.novidades {
+  left: 381px;
+  top: 707px;
+  width: 154px;
+  height: 48px;
+}
+
+.ol-estudante {
+  color: #000000;
+  text-align: left;
+  font-size: 40px;
+  font-weight: 400;
+  position: absolute;
+  left: 36px;
+  top: 141px;
+  width: 376px;
+  height: 59px;
+}
+
+.rectangle-8 {
+  background: rgba(217, 217, 217, 0.52);
+  width: 680px;
+  height: 150px;
+  position: absolute;
+  left: 20px;
+  top: 808px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-mauris-luctus-turpis-vitae-fermentum-aliquet-pellentesque-et-dictum-nunc-ac-consequat-magna {
+  color: #040202;
+  text-align: left;
+  font-size: 24px;
+  font-weight: 400;
+  position: absolute;
+  left: 64px;
+  top: 836px;
+  width: 592px;
+  height: 87px;
+}
+
+.image-1 {
+  width: 250px;
+  height: 108px;
+  position: absolute;
+  left: 20px;
+  top: 23px;
+  object-fit: cover;
+  aspect-ratio: 250/108;
+}
+
+.rectangle-25 {
+  background: rgba(217, 217, 217, 0.47);
+  border-radius: 30px;
+  width: 162px;
+  height: 48px;
+  position: absolute;
+  left: 525px;
+  top: 275px;
+  cursor: pointer;
+}
+
+.cadastre-se {
+  color: #080707;
+  text-align: left;
+  font-size: 24px;
+  font-weight: 400;
+  position: absolute;
+  left: 535px;
+  top: 284px;
+  cursor: pointer;
+}
+
+/* Estilos para a página de Login */
+.login-page {
+  background: #4133ff;
+  border: 1px solid #000000;
+  height: 840px;
+  position: relative;
+  overflow: hidden;
+}
+
+.rectangle-13 {
+  background: rgba(217, 217, 217, 0.45);
+  width: 751px;
+  height: 194px;
+  position: absolute;
+  left: -3px;
+  top: -39px;
+}
+
+.realize-o-login {
+  color: #000000;
+  text-align: left;
+  font-size: 36px;
+  font-weight: 400;
+  position: absolute;
+  left: 337px;
+  top: 58px;
+}
+
+.email, .senha {
+  color: #000000;
+  text-align: left;
+  font-size: 40px;
+  font-weight: 400;
+  position: absolute;
+}
+
+.email {
+  left: 136px;
+  bottom: 473px;
+  width: 122px;
+}
+
+.senha {
+  left: 132px;
+  bottom: 354px;
+  width: 195px;
+}
+
+.rectangle-14, .rectangle-15 {
+  background: #d9d9d9;
+  width: 292px;
+  height: 38px;
+  position: absolute;
+}
+
+.rectangle-14 {
+  left: 272px;
+  top: 325px;
+}
+
+.rectangle-15 {
+  left: 272px;
+  top: 438px;
+}
+
+.ainda-n-o-tem-uma-conta-cadastre-se-aqui {
+  color: #000000;
+  text-align: left;
+  font-size: 24px;
+  font-weight: 400;
+  position: absolute;
+  right: 58px;
+  bottom: 288px;
+  width: 506px;
+  cursor: pointer;
+}
+
+.digite-seu-e-mail-e-senha-para-entrar {
+  color: #000000;
+  text-align: left;
+  font-size: 24px;
+  font-weight: 400;
+  position: absolute;
+  left: 186px;
+  top: 272px;
+  width: 593px;
+}
+
+.rectangle-26, .rectangle-262 {
+  background: rgba(217, 217, 217, 0.51);
+  border-radius: 30px;
+  width: 162px;
+  height: 48px;
+  position: absolute;
+  top: 749px;
+}
+
+.rectangle-26 {
+  left: 130px;
+  cursor: pointer;
+}
+
+.rectangle-262 {
+  left: 405px;
+}
+
+.entrar {
+  color: #040404;
+  text-align: left;
+  font-size: 24px;
+  font-weight: 400;
+  position: absolute;
+  left: 452px;
+  top: 758px;
+}
+
+.voltar {
+  color: #000000;
+  text-align: left;
+  font-size: 24px;
+  font-weight: 400;
+  position: absolute;
+  cursor: pointer;
+}
+
+.login-page .voltar {
+  left: 186px;
+  top: 758px;
+}
+
+.image-2 {
+  width: 250px;
+  height: 108px;
+  position: absolute;
+  left: -3px;
+  top: 4px;
+  object-fit: cover;
+  aspect-ratio: 250/108;
+}
+
+/* Estilos para a página de Cadastro */
+.cadastro {
+  background: #4133ff;
+  border: 1px solid #000000;
+  height: 856px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cadastro .rectangle-13 {
+  width: 757px;
+  left: -37px;
+  top: -16px;
+}
+
+.cadastro .email {
+  left: 132px;
+  bottom: 409px;
+}
+
+.cadastro .nome {
+  color: #000000;
+  text-align: left;
+  font-size: 40px;
+  font-weight: 400;
+  position: absolute;
+  left: 132px;
+  bottom: 478px;
+  width: 122px;
+}
+
+.cadastro .senha {
+  left: 132px;
+  bottom: 335px;
+}
+
+.cadastro .rectangle-14 {
+  left: 272px;
+  top: 389px;
+}
+
