@@ -1,411 +1,160 @@
-/* Estilos gerais */
-body {
-  font-family: 'Inter', sans-serif;
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* Estilos para a página Home */
-.home {
-  background: #4133ff;
-  border: 1px solid #000000;
-  height: 1575px;
-  position: relative;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  overflow: hidden;
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
 }
 
-.rectangle-24 {
-  background: rgba(217, 217, 217, 0.51);
-  border-radius: 30px;
-  width: 162px;
-  height: 48px;
-  position: absolute;
-  left: 349px;
-  top: 275px;
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem 0;
+}
+
+.header {
+  background-color: #4133ff;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  height: 60px;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.nav a {
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav a:hover {
+  color: #ddd;
+}
+
+.main-content {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.welcome-section h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.section {
+  margin-top: 2rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.form-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input, textarea, button {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+button {
+  background-color: #4133ff;
+  color: white;
+  border: none;
   cursor: pointer;
+  transition: background 0.3s ease;
 }
 
-.frame-1 {
-  border-radius: 30px;
-  width: 307px;
-  height: 282px;
-  position: absolute;
-  left: 21px;
-  top: 396px;
+button:hover {
+  background-color: #2f24c9;
 }
 
-.f-0-c-8890-f-bdae-4541-9-c-8-a-358-efde-7-e-879-1 {
-  width: 329px;
-  height: 188px;
-  position: absolute;
-  left: 0px;
-  top: 50px;
-  object-fit: cover;
-  aspect-ratio: 329/188;
+.footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 4rem;
 }
 
-.seja-bem-vindo-a-plataforma-de-cursos {
-  color: #000000;
-  text-align: left;
-  font-size: 24px;
-  font-weight: 400;
-  position: absolute;
-  left: 30px;
-  top: 220px;
-  width: 680px;
-  height: 55px;
-}
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-.image {
-  width: 330px;
-  height: 183px;
-  position: absolute;
-  left: 370px;
-  top: 449px;
-  object-fit: cover;
-}
+  .nav {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+  }
 
-.login {
-  color: #080707;
-  text-align: left;
-  font-size: 24px;
-  font-weight: 400;
-  position: absolute;
-  left: 400px;
-  top: 284px;
-  cursor: pointer;
-}
+  .nav a {
+    padding: 0.5rem 0;
+  }
 
-.rectangle-3 {
-  background: rgba(217, 217, 217, 0.32);
-  width: 680px;
-  height: 238px;
-  position: absolute;
-  left: 20px;
-  top: 23px;
-}
+  .welcome-section h1 {
+    font-size: 1.6rem;
+  }
 
-.frame {
-  width: 98px;
-  height: 96px;
-  position: absolute;
-  left: 572px;
-  top: 46px;
-  overflow: visible;
+  .form-container {
+    width: 90%;
+  }
 }
-
-.rectangle-4, .rectangle-5, .rectangle-6, .rectangle-7 {
-  border-radius: 15px;
-  height: 54px;
-  position: absolute;
-  top: 694px;
-  cursor: pointer;
-}
-
-.rectangle-4 {
-  background: rgba(217, 217, 217, 0.45);
-  width: 154px;
-  left: 20px;
-}
-
-.rectangle-5 {
-  background: rgba(217, 217, 217, 0.5);
-  width: 154px;
-  left: 195px;
-}
-
-.rectangle-6 {
-  background: rgba(217, 217, 217, 0.46);
-  width: 154px;
-  left: 370px;
-}
-
-.rectangle-7 {
-  background: rgba(217, 217, 217, 0.51);
-  width: 154px;
-  left: 546px;
-}
-
-.contato, .cursos, .noticias, .novidades {
-  color: #000000;
-  text-align: left;
-  font-size: 24px;
-  font-weight: 400;
-  position: absolute;
-  cursor: pointer;
-}
-
-.contato {
-  left: 547px;
-  top: 707px;
-  width: 154px;
-  height: 48px;
-}
-
-.cursos {
-  left: 20px;
-  top: 705px;
-  width: 154px;
-  height: 48px;
-}
-
-.noticias {
-  left: 226px;
-  top: 705px;
-}
-
-.novidades {
-  left: 381px;
-  top: 707px;
-  width: 154px;
-  height: 48px;
-}
-
-.ol-estudante {
-  color: #000000;
-  text-align: left;
-  font-size: 40px;
-  font-weight: 400;
-  position: absolute;
-  left: 36px;
-  top: 141px;
-  width: 376px;
-  height: 59px;
-}
-
-.rectangle-8 {
-  background: rgba(217, 217, 217, 0.52);
-  width: 680px;
-  height: 150px;
-  position: absolute;
-  left: 20px;
-  top: 808px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-}
-
-.lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-mauris-luctus-turpis-vitae-fermentum-aliquet-pellentesque-et-dictum-nunc-ac-consequat-magna {
-  color: #040202;
-  text-align: left;
-  font-size: 24px;
-  font-weight: 400;
-  position: absolute;
-  left: 64px;
-  top: 836px;
-  width: 592px;
-  height: 87px;
-}
-
-.image-1 {
-  width: 250px;
-  height: 108px;
-  position: absolute;
-  left: 20px;
-  top: 23px;
-  object-fit: cover;
-  aspect-ratio: 250/108;
-}
-
-.rectangle-25 {
-  background: rgba(217, 217, 217, 0.47);
-  border-radius: 30px;
-  width: 162px;
-  height: 48px;
-  position: absolute;
-  left: 525px;
-  top: 275px;
-  cursor: pointer;
-}
-
-.cadastre-se {
-  color: #080707;
-  text-align: left;
-  font-size: 24px;
-  font-weight: 400;
-  position: absolute;
-  left: 535px;
-  top: 284px;
-  cursor: pointer;
-}
-
-/* Estilos para a página de Login */
-.login-page {
-  background: #4133ff;
-  border: 1px solid #000000;
-  height: 840px;
-  position: relative;
-  overflow: hidden;
-}
-
-.rectangle-13 {
-  background: rgba(217, 217, 217, 0.45);
-  width: 751px;
-  height: 194px;
-  position: absolute;
-  left: -3px;
-  top: -39px;
-}
-
-.realize-o-login {
-  color: #000000;
-  text-align: left;
-  font-size: 36px;
-  font-weight: 400;
-  position: absolute;
-  left: 337px;
-  top: 58px;
-}
-
-.email, .senha {
-  color: #000000;
-  text-align: left;
-  font-size: 40px;
-  font-weight: 400;
-  position: absolute;
-}
-
-.email {
-  left: 136px;
-  bottom: 473px;
-  width: 122px;
-}
-
-.senha {
-  left: 132px;
-  bottom: 354px;
-  width: 195px;
-}
-
-.rectangle-14, .rectangle-15 {
-  background: #d9d9d9;
-  width: 292px;
-  height: 38px;
-  position: absolute;
-}
-
-.rectangle-14 {
-  left: 272px;
-  top: 325px;
-}
-
-.rectangle-15 {
-  left: 272px;
-  top: 438px;
-}
-
-.ainda-n-o-tem-uma-conta-cadastre-se-aqui {
-  color: #000000;
-  text-align: left;
-  font-size: 24px;
-  font-weight: 400;
-  position: absolute;
-  right: 58px;
-  bottom: 288px;
-  width: 506px;
-  cursor: pointer;
-}
-
-.digite-seu-e-mail-e-senha-para-entrar {
-  color: #000000;
-  text-align: left;
-  font-size: 24px;
-  font-weight: 400;
-  position: absolute;
-  left: 186px;
-  top: 272px;
-  width: 593px;
-}
-
-.rectangle-26, .rectangle-262 {
-  background: rgba(217, 217, 217, 0.51);
-  border-radius: 30px;
-  width: 162px;
-  height: 48px;
-  position: absolute;
-  top: 749px;
-}
-
-.rectangle-26 {
-  left: 130px;
-  cursor: pointer;
-}
-
-.rectangle-262 {
-  left: 405px;
-}
-
-.entrar {
-  color: #040404;
-  text-align: left;
-  font-size: 24px;
-  font-weight: 400;
-  position: absolute;
-  left: 452px;
-  top: 758px;
-}
-
-.voltar {
-  color: #000000;
-  text-align: left;
-  font-size: 24px;
-  font-weight: 400;
-  position: absolute;
-  cursor: pointer;
-}
-
-.login-page .voltar {
-  left: 186px;
-  top: 758px;
-}
-
-.image-2 {
-  width: 250px;
-  height: 108px;
-  position: absolute;
-  left: -3px;
-  top: 4px;
-  object-fit: cover;
-  aspect-ratio: 250/108;
-}
-
-/* Estilos para a página de Cadastro */
-.cadastro {
-  background: #4133ff;
-  border: 1px solid #000000;
-  height: 856px;
-  position: relative;
-  overflow: hidden;
-}
-
-.cadastro .rectangle-13 {
-  width: 757px;
-  left: -37px;
-  top: -16px;
-}
-
-.cadastro .email {
-  left: 132px;
-  bottom: 409px;
-}
-
-.cadastro .nome {
-  color: #000000;
-  text-align: left;
-  font-size: 40px;
-  font-weight: 400;
-  position: absolute;
-  left: 132px;
-  bottom: 478px;
-  width: 122px;
-}
-
-.cadastro .senha {
-  left: 132px;
-  bottom: 335px;
-}
-
-.cadastro .rectangle-14 {
-  left: 272px;
-  top: 389px;
-}
-

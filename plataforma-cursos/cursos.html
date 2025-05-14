@@ -1,89 +1,48 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cursos - Plataforma de Cursos</title>
-  <link rel="stylesheet" href="css/vars.css">
-  <link rel="stylesheet" href="css/style.css">
-  <style>
-    a, button, input, select, h1, h2, h3, h4, h5, * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      border: none;
-      text-decoration: none;
-      background: none;
-      -webkit-font-smoothing: antialiased;
-    }
-    menu, ol, ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cursos - InfoCursos</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
-  <div class="cursos">
-    <img class="image-8" src="images/course-bg1.jpg" />
-    <img class="image-5" src="images/course-bg2.jpg" />
-    <img class="image-52" src="images/course-bg3.jpg" />
-    <div class="rectangle-8"></div>
-    <div class="rectangle-11"></div>
-    <div class="rectangle-13"></div>
-    <div class="saiba-mais">Saiba mais</div>
-    <div class="lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    </div>
-    <img class="image-3" src="images/course1.jpg" />
-    <div class="rectangle-112"></div>
-    <img class="image-6" src="images/course2.jpg" />
-    <img class="image-2" src="images/course3.jpg" />
-    <div class="lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit2">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      <br />
-    </div>
-    <img class="rectangle-12" src="images/rectangle.svg" />
-    <img class="rectangle-19" src="images/rectangle.svg" />
-    <div class="saiba-mais2">Saiba mais</div>
-    <div class="saiba-mais3">
-      Saiba mais
-      <br />
-    </div>
-    <div class="lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit3">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    </div>
-    <img class="rectangle-14" src="images/rectangle.svg" />
-    <img class="image-7" src="images/course4.jpg" />
-    <div class="saiba-mais4">
-      Saiba mais
-      <br />
-    </div>
-    <div class="lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit4">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    </div>
-    <div class="rectangle-18" onclick="window.location.href='index.html'"></div>
-    <div class="voltar" onclick="window.location.href='index.html'">Voltar</div>
-    <div class="rectangle-20"></div>
-    <div class="inscreva-se">
-      Inscreva-se
-      <br />
-    </div>
-    <div class="rectangle-21"></div>
-    <div class="inscreva-se2">
-      Inscreva-se
-      <br />
-    </div>
-    <div class="rectangle-22"></div>
-    <div class="inscreva-se3">
-      Inscreva-se
-      <br />
-    </div>
-    <div class="rectangle-23"></div>
-    <div class="inscreva-se4">
-      Inscreva-se
-      <br />
-    </div>
-  </div>
+  <header class="header">
+    <img src="images/v24_3.png" alt="Logo" class="logo" />
+    <nav class="nav">
+      <a href="index.html">Início</a>
+      <a href="contatos.html">Contatos</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>Cursos Disponíveis</h1>
+    <section class="card-grid">
+      <div class="card">
+        <h3>Curso de HTML</h3>
+        <p>Aprenda a criar sites com HTML.</p>
+      </div>
+      <div class="card">
+        <h3>Curso de CSS</h3>
+        <p>Estilize suas páginas com CSS moderno.</p>
+      </div>
+      <div class="card">
+        <h3>Curso de JavaScript</h3>
+        <p>Dê vida às suas páginas com JS.</p>
+      </div>
+      <div class="card">
+        <h3>Curso de Python</h3>
+        <p>Aprenda a linguagem de programação mais usada para
+        desenvolvimento de IA's com o novo curso de Python para iniciantes.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    © 2025 InfoCursos.
+  </footer>
 </body>
+
 </html>
