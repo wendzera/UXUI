@@ -1,3 +1,50 @@
+/* Definição das variáveis de cor e estilos existentes */
+:root {
+  --primary-color: #4133ff;
+  --primary-color-hover: #2f24c9;
+  --header-bg: #4133ff;
+  --header-text: white;
+  --footer-bg: #222;
+  --body-bg: #f4f4f4;
+  --card-bg: white;
+  --text-color: #333;
+  --link-color: white;
+  --link-hover-color: #ddd;
+}
+
+/* Tema para Protanopia */
+body.protanopia {
+  --primary-color: #005A9C;
+  /* Azul forte */
+  --primary-color-hover: #004477;
+  --header-bg: #005A9C;
+  --header-text: #FFFF00;
+  /* Amarelo para alto contraste */
+  --link-hover-color: #DDDD00;
+}
+
+/* Tema para Deuteranopia */
+body.deuteranopia {
+  --primary-color: #3066BE;
+  /* Azul mais claro */
+  --primary-color-hover: #254E94;
+  --header-bg: #3066BE;
+  --header-text: #FFD700;
+  /* Dourado/Amarelo */
+  --link-hover-color: #E6C300;
+}
+
+/* Tema para Tritanopia */
+body.tritanopia {
+  --primary-color: #CF0000;
+  /* Vermelho */
+  --primary-color-hover: #A00000;
+  --header-bg: #CF0000;
+  --header-text: #FFFFFF;
+  --link-hover-color: #CCCCCC;
+}
+
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,8 +53,8 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
+  background-color: var(--body-bg);
+  color: var(--text-color);
   line-height: 1.6;
 }
 
@@ -30,8 +77,8 @@ img {
 }
 
 .header {
-  background-color: #4133ff;
-  color: white;
+  background-color: var(--header-bg);
+  color: var(--header-text);
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -50,14 +97,47 @@ img {
 }
 
 .nav a {
-  color: white;
+  color: var(--link-color);
   font-weight: bold;
   transition: color 0.3s ease;
 }
 
 .nav a:hover {
-  color: #ddd;
+  color: var(--link-hover-color);
 }
+
+/* Estilos para o seletor de acessibilidade */
+.accessibility-container {
+  margin-left: 1rem;
+}
+
+.theme-selector {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid var(--header-text);
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.theme-selector option {
+  background-color: white;
+  color: #333;
+}
+
+/* Classe para esconder o label visualmente, mas mantê-lo para leitores de tela */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
 
 .main-content {
   text-align: center;
@@ -81,9 +161,9 @@ img {
 }
 
 .card {
-  background-color: white;
+  background-color: var(--card-bg);
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
   transition: transform 0.2s ease;
 }
@@ -93,12 +173,12 @@ img {
 }
 
 .form-container {
-  background: white;
+  background: var(--card-bg);
   padding: 2rem;
   border-radius: 10px;
   max-width: 500px;
   margin: auto;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 form {
@@ -107,7 +187,9 @@ form {
   gap: 1rem;
 }
 
-input, textarea, button {
+input,
+textarea,
+button {
   padding: 0.75rem;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -115,7 +197,7 @@ input, textarea, button {
 }
 
 button {
-  background-color: #4133ff;
+  background-color: var(--primary-color);
   color: white;
   border: none;
   cursor: pointer;
@@ -123,11 +205,11 @@ button {
 }
 
 button:hover {
-  background-color: #2f24c9;
+  background-color: var(--primary-color-hover);
 }
 
 .footer {
-  background-color: #222;
+  background-color: var(--footer-bg);
   color: white;
   text-align: center;
   padding: 1rem;
@@ -140,21 +222,23 @@ button:hover {
     align-items: flex-start;
   }
 
+  .accessibility-container {
+    margin-left: 0;
+    margin-top: 1rem;
+    /* Adiciona um flex-direction para empilhar os controles */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .font-size-controls {
+    margin-left: 0;
+  }
+
   .nav {
     flex-direction: column;
     width: 100%;
     margin-top: 1rem;
-  }
-
-  .nav a {
-    padding: 0.5rem 0;
-  }
-
-  .welcome-section h1 {
-    font-size: 1.6rem;
-  }
-
-  .form-container {
-    width: 90%;
   }
 }

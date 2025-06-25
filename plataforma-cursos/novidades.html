@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Novidades - InfoCursos</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
   <header class="header">
     <img src="images/v24_3.png" alt="Logo" class="logo" />
@@ -13,6 +15,20 @@
       <a href="index.html">Início</a>
       <a href="noticias.html">Notícias</a>
     </nav>
+    <div class="accessibility-container">
+      <label for="theme-selector" class="visually-hidden">Filtro de Cores</label>
+      <select id="theme-selector" class="theme-selector">
+        <option value="default">Padrão</option>
+        <option value="protanopia">Protanopia</option>
+        <option value="deuteranopia">Deuteranopia</option>
+        <option value="tritanopia">Tritanopia</option>
+      </select>
+      <div class="font-size-controls">
+        <button id="decrease-font" title="Diminuir fonte">A-</button>
+        <button id="reset-font" title="Restaurar fonte padrão">A</button>
+        <button id="increase-font" title="Aumentar fonte">A+</button>
+      </div>
+    </div>
   </header>
 
   <main class="container">
@@ -33,4 +49,6 @@
     © 2025 InfoCursos.
   </footer>
 </body>
+<script src="js/accessibility.js"></script>
+
 </html>
