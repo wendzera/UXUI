@@ -111,3 +111,47 @@ document.addEventListener('DOMContentLoaded', () => {
     loadThemePreference();
     loadFontSizePreference();
 });
+/**
+ * Script de Acessibilidade para InfoCursos
+ *
+ * ... (código existente) ...
+ */
+document.addEventListener('DOMContentLoaded', () => {
+    // --- CARREGAMENTO INICIAL ---
+    // ... (código existente para tema e fonte) ...
+    loadThemePreference();
+    loadFontSizePreference();
+
+    /**********************************/
+    /* CONTROLE DO BOTÃO VOLTAR AO TOPO */
+    /**********************************/
+    const backToTopButton = document.getElementById('backToTopBtn');
+
+    // Função para mostrar ou ocultar o botão
+    const scrollFunction = () => {
+        // Mostra o botão se o usuário rolar mais de 100 pixels para baixo
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            if(backToTopButton) backToTopButton.style.display = "block";
+        } else {
+            if(backToTopButton) backToTopButton.style.display = "none";
+        }
+    };
+
+    // Função para rolar a página para o topo suavemente
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    };
+
+    // Adiciona o listener de evento de rolagem na janela
+    window.onscroll = () => {
+        scrollFunction();
+    };
+
+    // Adiciona o listener de evento de clique no botão
+    if (backToTopButton) {
+        backToTopButton.addEventListener('click', scrollToTop);
+    }
+});

@@ -241,4 +241,40 @@ button:hover {
     width: 100%;
     margin-top: 1rem;
   }
+
+  /* Estilos para o botão "Voltar ao Topo" */
+  #backToTopBtn {
+    display: none;
+    /* Oculto por padrão */
+    position: fixed;
+    /* Posição fixa na tela */
+    bottom: 20px;
+    /* Distância do fundo */
+    right: 30px;
+    /* Distância da direita */
+    z-index: 99;
+    /* Garante que fique sobre outros elementos */
+    border: none;
+    /* Sem borda */
+    outline: none;
+    /* Sem contorno ao focar */
+    background-color: var(--primary-color);
+    /* Usa a cor primária do seu site */
+    color: white;
+    /* Cor do ícone */
+    cursor: pointer;
+    /* Cursor de mão ao passar por cima */
+    padding: 15px;
+    /* Espaçamento interno */
+    border-radius: 10px;
+    /* Bordas arredondadas */
+    font-size: 18px;
+    /* Tamanho do ícone */
+    transition: background-color 0.3s ease;
+  }
+
+  #backToTopBtn:hover {
+    background-color: var(--primary-color-hover);
+    /* Cor ao passar o mouse */
+  }
 }
