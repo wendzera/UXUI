@@ -117,23 +117,21 @@ document.addEventListener('DOMContentLoaded', () => {
  * ... (código existente) ...
  */
 document.addEventListener('DOMContentLoaded', () => {
-    // --- CARREGAMENTO INICIAL ---
-    // ... (código existente para tema e fonte) ...
-    loadThemePreference();
-    loadFontSizePreference();
+    // ...código de tema e fonte...
 
-    /**********************************/
-    /* CONTROLE DO BOTÃO VOLTAR AO TOPO */
-    /**********************************/
+    // CONTROLE DO BOTÃO VOLTAR AO TOPO
     const backToTopButton = document.getElementById('backToTopBtn');
+    if (!backToTopButton) {
+        console.warn('Botão "Voltar ao Topo" não encontrado!');
+        return;
+    }
 
     // Função para mostrar ou ocultar o botão
     const scrollFunction = () => {
-        // Mostra o botão se o usuário rolar mais de 100 pixels para baixo
         if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-            if(backToTopButton) backToTopButton.style.display = "block";
+            backToTopButton.style.display = "block";
         } else {
-            if(backToTopButton) backToTopButton.style.display = "none";
+            backToTopButton.style.display = "none";
         }
     };
 
@@ -145,13 +143,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // Adiciona o listener de evento de rolagem na janela
-    window.onscroll = () => {
-        scrollFunction();
-    };
+    window.addEventListener('scroll', scrollFunction);
+    backToTopButton.addEventListener('click', scrollToTop);
 
-    // Adiciona o listener de evento de clique no botão
-    if (backToTopButton) {
-        backToTopButton.addEventListener('click', scrollToTop);
-    }
+    // Inicializa o estado do botão ao carregar a página
+    scrollFunction();
 });
