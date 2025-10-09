@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guia de UI Patterns - InfoCursos</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .pattern-showcase {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      margin: 2rem 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .pattern-title {
+      color: var(--primary-color);
+      border-bottom: 2px solid var(--primary-color);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .pattern-demo {
+      margin: 1.5rem 0;
+      padding: 1rem;
+      border: 2px dashed #e0e0e0;
+      border-radius: 8px;
+      background: #f9f9f9;
+    }
+
+    .code-block {
+      background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
+      margin: 1rem 0;
+    }
+
+    .benefit-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .benefit-list li {
+      padding: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .benefit-list li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #4caf50;
+      font-weight: bold;
+    }
+
+    .nav-guide {
+      background: var(--primary-color);
+      color: white;
+      padding: 1rem;
+      border-radius: 8px;
+      margin: 2rem 0;
+      text-align: center;
+    }
+
+    .nav-guide a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <img src="images/v24_3.png" alt="Logo" class="logo" />
+    <nav class="nav">
+      <a href="index.html">Início</a>
+      <a href="cursos.html">Cursos</a>
+      <a href="ui-patterns-guide.html">Guia de Padrões</a>
+    </nav>
+    <div class="accessibility-container">
+      <label for="theme-selector" class="visually-hidden">Filtro de Cores</label>
+      <select id="theme-selector" class="theme-selector">
+        <option value="default">Padrão</option>
+        <option value="protanopia">Protanopia</option>
+        <option value="deuteranopia">Deuteranopia</option>
+        <option value="tritanopia">Tritanopia</option>
+      </select>
+      <div class="font-size-controls">
+        <button id="decrease-font" title="Diminuir fonte">A-</button>
+        <button id="reset-font" title="Restaurar fonte padrão">A</button>
+        <button id="increase-font" title="Aumentar fonte">A+</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 style="text-align: center; margin: 2rem 0;">📚 Guia de UI Patterns</h1>
+    <p style="text-align: center; color: #666; max-width: 800px; margin: 0 auto 3rem;">
+      Este guia demonstra todos os padrões de interface implementados no projeto, 
+      baseados nas melhores práticas do <a href="https://ui-patterns.com/" target="_blank" style="color: var(--primary-color)">UI-Patterns.com</a>
+    </p>
+
+    <div class="nav-guide">
+      <strong>🚀 Navegue pelas implementações:</strong><br>
+      <a href="cursos.html">Cursos (Vanilla JS)</a> |
+      <a href="cursos-react.html">Cursos (React)</a> |
+      <a href="login.html">Login com Validação</a>
+    </div>
+
+    <!-- Pattern 1: Progressive Disclosure -->
+    <div class="pattern-showcase">
+      <h2 class="pattern-title">1. Progressive Disclosure (Revelação Progressiva)</h2>
+      <p><strong>O que é:</strong> Padrão que mostra apenas informações essenciais inicialmente, permitindo que o usuário expanda para ver mais detalhes quando necessário.</p>
+      
+      <ul class="benefit-list">
+        <li>Reduz sobrecarga cognitiva</li>
+        <li>Interface mais limpa e organizada</li>
+        <li>Usuário controla o nível de detalhe</li>
+        <li>Melhora a escaneabilidade</li>
+      </ul>
+
+      <div class="pattern-demo">
+        <div class="card" id="demo-card-1">
+          <div class="card-content">
+            <h3>Exemplo de Curso</h3>
+            <p>Descrição breve do curso.</p>
+            <button class="card-toggle" onclick="document.getElementById('demo-card-1').classList.toggle('expanded'); this.textContent = document.getElementById('demo-card-1').classList.contains('expanded') ? 'Ver menos ▲' : 'Ver mais ▼'">Ver mais ▼</button>
+            <div class="card-details">
+              <p><strong>Duração:</strong> 20 horas</p>
+              <p><strong>Nível:</strong> Iniciante</p>
+              <p>Informações detalhadas aparecem aqui quando expandido!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-block">
+// Inicializar Progressive Disclosure
+new UIPatterns.ProgressiveDisclosure();
+      </div>
+    </div>
+
+    <!-- Pattern 2: Toast Notifications -->
+    <div class="pattern-showcase">
+      <h2 class="pattern-title">2. Toast Notifications</h2>
+      <p><strong>O que é:</strong> Notificações não-intrusivas que aparecem temporariamente para dar feedback sobre ações.</p>
+      
+      <ul class="benefit-list">
+        <li>Feedback imediato ao usuário</li>
+        <li>Não bloqueia a interface</li>
+        <li>Desaparece automaticamente</li>
+        <li>Suporta múltiplos tipos (sucesso, erro, aviso)</li>
+      </ul>
+
+      <div class="pattern-demo">
+        <button onclick="window.toast.show('Sucesso! Ação realizada.', 'success')">
+          Mostrar Toast de Sucesso
+        </button>
+        <button onclick="window.toast.show('Erro ao processar!', 'error')">
+          Mostrar Toast de Erro
+        </button>
+        <button onclick="window.toast.show('Atenção necessária!', 'warning')">
+          Mostrar Toast de Aviso
+        </button>
+      </div>
+
+      <div class="code-block">
+// Criar toast
+const toast = new UIPatterns.ToastNotification();
+toast.show('Mensagem aqui', 'success', 3000);
+      </div>
+    </div>
+
+    <!-- Pattern 3: Modal Dialog -->
+    <div class="pattern-showcase">
+      <h2 class="pattern-title">3. Modal Dialog</h2>
+      <p><strong>O que é:</strong> Janela sobreposta que foca a atenção do usuário em uma tarefa específica.</p>
+      
+      <ul class="benefit-list">
+        <li>Foco no conteúdo importante</li>
+        <li>Acessível (fecha com ESC)</li>
+        <li>Previne ações acidentais</li>
+        <li>Contextualiza informações</li>
+      </ul>
+
+      <div class="pattern-demo">
+        <button onclick="window.modal.open('Exemplo de Modal', '<p>Este é um exemplo de modal dialog.</p><p>Você pode incluir qualquer conteúdo HTML aqui.</p>', [{text: 'Entendi', onClick: () => window.modal.close()}])">
+          Abrir Modal de Exemplo
+        </button>
+        <button onclick="window.modal.open('Confirmação', '<p>Tem certeza que deseja continuar?</p>', [{text: 'Cancelar', onClick: () => window.modal.close()}, {text: 'Confirmar', onClick: () => { window.modal.close(); window.toast.show('Ação confirmada!', 'success'); }}])">
+          Modal de Confirmação
+        </button>
+      </div>
+
+      <div class="code-block">
+// Abrir modal
+const modal = new UIPatterns.ModalDialog();
+modal.open('Título', 'Conteúdo HTML', [
+  { text: 'Cancelar', onClick: () => modal.close() },
+  { text: 'OK', onClick: () => handleAction() }
+]);
+      </div>
+    </div>
+
+    <!-- Pattern 4: Form Validation -->
+    <div class="pattern-showcase">
+      <h2 class="pattern-title">4. Form Validation (Validação de Formulário)</h2>
+      <p><strong>O que é:</strong> Validação em tempo real com feedback visual claro sobre o estado dos campos.</p>
+      
+      <ul class="benefit-list">
+        <li>Reduz erros de entrada</li>
+        <li>Feedback instantâneo</li>
+        <li>Estados visuais claros</li>
+        <li>Mensagens de erro específicas</li>
+      </ul>
+
+      <div class="pattern-demo">
+        <form id="demo-form">
+          <div class="form-group">
+            <label for="demo-email">E-mail</label>
+            <input type="email" id="demo-email" placeholder="seu@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="demo-password">Senha (mínimo 6 caracteres)</label>
+            <input type="password" id="demo-password" placeholder="Sua senha" required />
+          </div>
+          <button type="submit">Testar Validação</button>
+        </form>
+      </div>
+
+      <div class="code-block">
+// Aplicar validação
+new UIPatterns.FormValidator('#meu-formulario');
+      </div>
+    </div>
+
+    <!-- Pattern 5: Search and Filter -->
+    <div class="pattern-showcase">
+      <h2 class="pattern-title">5. Search and Filter</h2>
+      <p><strong>O que é:</strong> Busca em tempo real combinada com filtros por categoria.</p>
+      
+      <ul class="benefit-list">
+        <li>Encontra conteúdo rapidamente</li>
+        <li>Resultados instantâneos</li>
+        <li>Múltiplos critérios de filtro</li>
+        <li>Feedback visual do que está ativo</li>
+      </ul>
+
+      <div class="pattern-demo">
+        <p><strong>Veja em ação:</strong></p>
+        <a href="cursos.html" style="color: var(--primary-color); text-decoration: underline;">
+          → Página de Cursos (Vanilla JS)
+        </a><br>
+        <a href="cursos-react.html" style="color: var(--primary-color); text-decoration: underline;">
+          → Página de Cursos (React com ordenação)
+        </a>
+      </div>
+
+      <div class="code-block">
+// Inicializar busca e filtro
+new UIPatterns.SearchFilter(
+  'search-input-id',
+  'filter-tag',
+  '.item-selector'
+);
+      </div>
+    </div>
+
+    <!-- Pattern 6: Breadcrumb -->
+    <div class="pattern-showcase">
+      <h2 class="pattern-title">6. Breadcrumb Navigation</h2>
+      <p><strong>O que é:</strong> Navegação hierárquica que mostra o caminho até a página atual.</p>
+      
+      <ul class="benefit-list">
+        <li>Melhor orientação espacial</li>
+        <li>Navegação rápida entre níveis</li>
+        <li>Reduz cliques necessários</li>
+        <li>Melhora a arquitetura da informação</li>
+      </ul>
+
+      <div class="pattern-demo">
+        <nav class="breadcrumb">
+          <a href="index.html">Início</a>
+          <span class="breadcrumb-separator">›</span>
+          <a href="cursos.html">Cursos</a>
+          <span class="breadcrumb-separator">›</span>
+          <span aria-current="page">JavaScript</span>
+        </nav>
+      </div>
+
+      <div class="code-block">
+// Criar breadcrumb
+UIPatterns.Breadcrumb.insertBreadcrumb([
+  { text: 'Início', url: 'index.html' },
+  { text: 'Cursos', url: 'cursos.html' },
+  { text: 'JavaScript', url: null }
+]);
+      </div>
+    </div>
+
+    <!-- Pattern 7: Skeleton Loading -->
+    <div class="pattern-showcase">
+      <h2 class="pattern-title">7. Skeleton Loading States</h2>
+      <p><strong>O que é:</strong> Placeholders visuais que imitam o layout do conteúdo durante carregamento.</p>
+      
+      <ul class="benefit-list">
+        <li>Melhora percepção de performance</li>
+        <li>Reduz ansiedade do usuário</li>
+        <li>Feedback visual instantâneo</li>
+        <li>Mais elegante que spinners</li>
+      </ul>
+
+      <div class="pattern-demo">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+          <div class="skeleton skeleton-card"></div>
+          <div class="skeleton skeleton-card"></div>
+          <div class="skeleton skeleton-card"></div>
+        </div>
+        <p style="margin-top: 1rem; text-align: center; color: #666;">
+          <button onclick="location.reload()">Recarregar para ver skeleton inicial</button>
+        </p>
+      </div>
+
+      <div class="code-block">
+// Mostrar skeleton
+UIPatterns.SkeletonLoader.createSkeleton(3);
+
+// Remover após carregar
+UIPatterns.SkeletonLoader.removeSkeleton();
+      </div>
+    </div>
+
+    <!-- Pattern 8: Lazy Loading -->
+    <div class="pattern-showcase">
+      <h2 class="pattern-title">8. Lazy Loading Images</h2>
+      <p><strong>O que é:</strong> Carrega imagens apenas quando elas estão prestes a entrar no viewport.</p>
+      
+      <ul class="benefit-list">
+        <li>Performance significativamente melhorada</li>
+        <li>Economia de banda</li>
+        <li>Carrega apenas o necessário</li>
+        <li>Experiência mais fluida</li>
+      </ul>
+
+      <div class="pattern-demo">
+        <p>Use o atributo <code>data-src</code> ao invés de <code>src</code>:</p>
+        <div class="code-block" style="background: white; color: #333; border: 1px solid #ddd;">
+&lt;img data-src="imagem.jpg" alt="Descrição" /&gt;
+        </div>
+        <p style="margin-top: 1rem;">O JavaScript detectará quando a imagem entrar na viewport e carregará automaticamente.</p>
+      </div>
+
+      <div class="code-block">
+// Inicializar lazy loading
+new UIPatterns.LazyImageLoader();
+      </div>
+    </div>
+
+    <!-- Resumo Final -->
+    <div class="pattern-showcase" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+      <h2 style="color: white; border-bottom-color: white;">🎯 Resumo dos Benefícios</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem;">
+        <div>
+          <h3>🚀 Performance</h3>
+          <ul>
+            <li>Lazy Loading</li>
+            <li>Skeleton States</li>
+            <li>Código otimizado</li>
+          </ul>
+        </div>
+        <div>
+          <h3>😊 Experiência</h3>
+          <ul>
+            <li>Progressive Disclosure</li>
+            <li>Toast Notifications</li>
+            <li>Form Validation</li>
+          </ul>
+        </div>
+        <div>
+          <h3>🎯 Usabilidade</h3>
+          <ul>
+            <li>Search & Filter</li>
+            <li>Breadcrumbs</li>
+            <li>Modal Dialogs</li>
+          </ul>
+        </div>
+        <div>
+          <h3>♿ Acessibilidade</h3>
+          <ul>
+            <li>ARIA labels</li>
+            <li>Navegação por teclado</li>
+            <li>Contraste adequado</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Links Úteis -->
+    <div class="pattern-showcase">
+      <h2 class="pattern-title">📖 Recursos e Referências</h2>
+      <ul style="line-height: 2;">
+        <li>📚 <a href="https://ui-patterns.com/" target="_blank" style="color: var(--primary-color)">UI Patterns - Biblioteca de Padrões</a></li>
+        <li>📖 <a href="https://www.nngroup.com/" target="_blank" style="color: var(--primary-color)">Nielsen Norman Group - UX Research</a></li>
+        <li>🎨 <a href="https://material.io/design" target="_blank" style="color: var(--primary-color)">Material Design - Google</a></li>
+        <li>📝 <a href="README.md" style="color: var(--primary-color)">README.md - Documentação Completa</a></li>
+      </ul>
+    </div>
+
+  </main>
+
+  <button id="backToTopBtn" title="Voltar ao topo">↑</button>
+
+  <footer class="footer">
+    © 2025 InfoCursos. Desenvolvido com ❤️ seguindo os melhores padrões de UX/UI
+  </footer>
+
+  <script src="js/ui-patterns.js"></script>
+  <script src="js/accessibility.js"></script>
+  <script>
+    // Inicializa validação para o formulário demo
+    document.addEventListener('DOMContentLoaded', () => {
+      new UIPatterns.FormValidator('#demo-form');
+    });
+  </script>
+
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cursos - React Demo - InfoCursos</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+  <header class="header">
+    <img src="images/v24_3.png" alt="Logo" class="logo" />
+    <nav class="nav">
+      <a href="index.html">Início</a>
+      <a href="cursos.html">Cursos (Vanilla JS)</a>
+      <a href="cursos-react.html">Cursos (React)</a>
+      <a href="contatos.html">Contatos</a>
+    </nav>
+    <div class="accessibility-container">
+      <label for="theme-selector" class="visually-hidden">Filtro de Cores</label>
+      <select id="theme-selector" class="theme-selector">
+        <option value="default">Padrão</option>
+        <option value="protanopia">Protanopia</option>
+        <option value="deuteranopia">Deuteranopia</option>
+        <option value="tritanopia">Tritanopia</option>
+      </select>
+      <div class="font-size-controls">
+        <button id="decrease-font" title="Diminuir fonte">A-</button>
+        <button id="reset-font" title="Restaurar fonte padrão">A</button>
+        <button id="increase-font" title="Aumentar fonte">A+</button>
+      </div>
+    </div>
+  </header>
+
+  <div id="root"></div>
+
+  <button id="backToTopBtn" title="Voltar ao topo">↑</button>
+
+  <footer class="footer">
+    © 2025 InfoCursos.
+  </footer>
+
+  <script type="text/babel">
+    const { useState, useEffect, useMemo } = React;
+
+    // Dados dos cursos
+    const coursesData = [
+      {
+        id: 1,
+        title: 'Curso de HTML5',
+        description: 'Aprenda a criar sites modernos com HTML5 semântico.',
+        category: 'frontend',
+        level: 'Iniciante',
+        duration: '20 horas',
+        instructor: 'João Silva',
+        price: 299,
+        rating: 4.8,
+        badge: 'Novo',
+        details: 'Aprenda HTML5 do zero, incluindo elementos semânticos, formulários avançados, APIs HTML5 e muito mais.'
+      },
+      {
+        id: 2,
+        title: 'Curso de CSS3',
+        description: 'Estilize suas páginas com CSS moderno.',
+        category: 'frontend',
+        level: 'Iniciante/Intermediário',
+        duration: '25 horas',
+        instructor: 'Maria Santos',
+        price: 349,
+        rating: 4.9,
+        badge: null,
+        details: 'Domine CSS3, Flexbox, Grid, animações, transições e design responsivo.'
+      },
+      {
+        id: 3,
+        title: 'Curso de JavaScript',
+        description: 'Dê vida às suas páginas com JS.',
+        category: 'frontend',
+        level: 'Intermediário',
+        duration: '40 horas',
+        instructor: 'Carlos Oliveira',
+        price: 499,
+        rating: 4.9,
+        badge: 'Popular',
+        details: 'JavaScript moderno (ES6+), DOM manipulation, APIs, async/await, e frameworks populares.'
+      },
+      {
+        id: 4,
+        title: 'Curso de Python',
+        description: 'A linguagem mais usada para desenvolvimento de IA.',
+        category: 'data',
+        level: 'Iniciante/Avançado',
+        duration: '50 horas',
+        instructor: 'Ana Costa',
+        price: 599,
+        rating: 5.0,
+        badge: 'Destaque',
+        details: 'Python do básico ao avançado, incluindo IA, Machine Learning, análise de dados e automação.'
+      },
+      {
+        id: 5,
+        title: 'Curso de Node.js',
+        description: 'Construa aplicações backend escaláveis.',
+        category: 'backend',
+        level: 'Intermediário',
+        duration: '35 horas',
+        instructor: 'Pedro Lima',
+        price: 549,
+        rating: 4.7,
+        badge: null,
+        details: 'Node.js, Express, APIs RESTful, autenticação, banco de dados e deploy.'
+      },
+      {
+        id: 6,
+        title: 'Curso de React Native',
+        description: 'Desenvolva apps mobile com React.',
+        category: 'mobile',
+        level: 'Intermediário/Avançado',
+        duration: '45 horas',
+        instructor: 'Lucas Ferreira',
+        price: 649,
+        rating: 4.8,
+        badge: 'Novo',
+        details: 'Crie aplicativos iOS e Android com React Native, navegação, APIs e publicação.'
+      },
+      {
+        id: 7,
+        title: 'Curso de React.js',
+        description: 'Construa interfaces modernas com React.',
+        category: 'frontend',
+        level: 'Intermediário',
+        duration: '38 horas',
+        instructor: 'Carla Mendes',
+        price: 549,
+        rating: 4.9,
+        badge: 'Popular',
+        details: 'React do básico ao avançado, hooks, context API, Redux e Next.js.'
+      },
+      {
+        id: 8,
+        title: 'Curso de Data Science',
+        description: 'Análise e visualização de dados com Python.',
+        category: 'data',
+        level: 'Intermediário',
+        duration: '55 horas',
+        instructor: 'Roberto Silva',
+        price: 699,
+        rating: 4.8,
+        badge: null,
+        details: 'Pandas, NumPy, Matplotlib, análise estatística e machine learning básico.'
+      }
+    ];
+
+    // Componente de Card de Curso
+    function CourseCard({ course, onExpand }) {
+      const [expanded, setExpanded] = useState(false);
+
+      const toggleExpand = () => {
+        setExpanded(!expanded);
+      };
+
+      return (
+        <div className={`card ${expanded ? 'expanded' : ''}`}>
+          {course.badge && <span className="card-badge">{course.badge}</span>}
+          <div className="card-content">
+            <h3>{course.title}</h3>
+            <p>{course.description}</p>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', margin: '0.5rem 0' }}>
+              <span style={{ color: '#FFD700' }}>★</span>
+              <span>{course.rating}</span>
+              <span style={{ color: '#999', marginLeft: 'auto' }}>R$ {course.price}</span>
+            </div>
+            <button className="card-toggle" onClick={toggleExpand}>
+              {expanded ? 'Ver menos ▲' : 'Ver mais ▼'}
+            </button>
+            {expanded && (
+              <div className="card-details">
+                <p><strong>Duração:</strong> {course.duration}</p>
+                <p><strong>Nível:</strong> {course.level}</p>
+                <p><strong>Instrutor:</strong> {course.instructor}</p>
+                <p>{course.details}</p>
+                <button onClick={() => {
+                  window.toast.show(`Interesse registrado em ${course.title}!`, 'success');
+                }}>
+                  Tenho interesse
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+      );
+    }
+
+    // Componente Principal
+    function CoursesApp() {
+      const [searchTerm, setSearchTerm] = useState('');
+      const [activeFilters, setActiveFilters] = useState([]);
+      const [sortBy, setSortBy] = useState('title');
+      const [loading, setLoading] = useState(true);
+
+      useEffect(() => {
+        // Simula carregamento inicial
+        const timer = setTimeout(() => setLoading(false), 800);
+        return () => clearTimeout(timer);
+      }, []);
+
+      const categories = [
+        { id: 'frontend', label: 'Frontend' },
+        { id: 'backend', label: 'Backend' },
+        { id: 'mobile', label: 'Mobile' },
+        { id: 'data', label: 'Data Science' }
+      ];
+
+      const toggleFilter = (category) => {
+        setActiveFilters(prev => 
+          prev.includes(category)
+            ? prev.filter(f => f !== category)
+            : [...prev, category]
+        );
+      };
+
+      const filteredAndSortedCourses = useMemo(() => {
+        let filtered = coursesData.filter(course => {
+          const matchesSearch = course.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                               course.description.toLowerCase().includes(searchTerm.toLowerCase());
+          const matchesFilter = activeFilters.length === 0 || activeFilters.includes(course.category);
+          return matchesSearch && matchesFilter;
+        });
+
+        // Ordenação
+        filtered.sort((a, b) => {
+          switch(sortBy) {
+            case 'price-asc':
+              return a.price - b.price;
+            case 'price-desc':
+              return b.price - a.price;
+            case 'rating':
+              return b.rating - a.rating;
+            case 'title':
+            default:
+              return a.title.localeCompare(b.title);
+          }
+        });
+
+        return filtered;
+      }, [searchTerm, activeFilters, sortBy]);
+
+      if (loading) {
+        return (
+          <main className="container">
+            <h1>Cursos Disponíveis (React)</h1>
+            <div className="card-grid">
+              {[1, 2, 3].map(i => (
+                <div key={i} className="skeleton skeleton-card"></div>
+              ))}
+            </div>
+          </main>
+        );
+      }
+
+      return (
+        <main className="container">
+          <nav className="breadcrumb">
+            <a href="index.html">Início</a>
+            <span className="breadcrumb-separator">›</span>
+            <span aria-current="page">Cursos (React)</span>
+          </nav>
+
+          <h1>Cursos Disponíveis (React)</h1>
+          <p style={{ textAlign: 'center', color: '#666', marginBottom: '2rem' }}>
+            Esta é uma demonstração usando React para busca e filtros em tempo real
+          </p>
+
+          <div className="search-filter-container">
+            <div className="search-box">
+              <input 
+                type="text" 
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                placeholder="🔍 Buscar cursos..." 
+                aria-label="Buscar cursos"
+              />
+            </div>
+
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
+              <div className="filter-tags">
+                {categories.map(cat => (
+                  <button 
+                    key={cat.id}
+                    className={`filter-tag ${activeFilters.includes(cat.id) ? 'active' : ''}`}
+                    onClick={() => toggleFilter(cat.id)}
+                  >
+                    {cat.label}
+                  </button>
+                ))}
+              </div>
+
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <label htmlFor="sort-select" style={{ fontSize: '0.9rem', color: '#666' }}>
+                  Ordenar:
+                </label>
+                <select 
+                  id="sort-select"
+                  value={sortBy} 
+                  onChange={(e) => setSortBy(e.target.value)}
+                  style={{ padding: '0.5rem', borderRadius: '5px', border: '2px solid #e0e0e0' }}
+                >
+                  <option value="title">Nome</option>
+                  <option value="price-asc">Preço (menor)</option>
+                  <option value="price-desc">Preço (maior)</option>
+                  <option value="rating">Avaliação</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div style={{ textAlign: 'center', margin: '1rem 0', color: '#666' }}>
+            {filteredAndSortedCourses.length} {filteredAndSortedCourses.length === 1 ? 'curso encontrado' : 'cursos encontrados'}
+          </div>
+
+          {filteredAndSortedCourses.length === 0 ? (
+            <div style={{ textAlign: 'center', padding: '3rem', color: '#999' }}>
+              <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🔍</div>
+              <h3>Nenhum curso encontrado</h3>
+              <p>Tente ajustar seus filtros ou busca</p>
+            </div>
+          ) : (
+            <section className="card-grid">
+              {filteredAndSortedCourses.map(course => (
+                <CourseCard key={course.id} course={course} />
+              ))}
+            </section>
+          )}
+        </main>
+      );
+    }
+
+    // Renderiza o app
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<CoursesApp />);
+  </script>
+
+  <script src="js/ui-patterns.js"></script>
+  <script src="js/accessibility.js"></script>
+
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+</body>
+
+</html>

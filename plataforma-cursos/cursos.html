@@ -33,32 +33,148 @@
 
   <main class="container">
     <h1>Cursos Disponíveis</h1>
+    
+    <!-- Search and Filter Pattern -->
+    <div class="search-filter-container">
+      <div class="search-box">
+        <input 
+          type="text" 
+          id="course-search" 
+          placeholder="🔍 Buscar cursos..." 
+          aria-label="Buscar cursos"
+        />
+      </div>
+      <div class="filter-tags">
+        <button class="filter-tag" data-category="frontend">Frontend</button>
+        <button class="filter-tag" data-category="backend">Backend</button>
+        <button class="filter-tag" data-category="mobile">Mobile</button>
+        <button class="filter-tag" data-category="data">Data Science</button>
+      </div>
+    </div>
+    
     <section class="card-grid">
-      <div class="card">
-        <h3>Curso de HTML</h3>
-        <p>Aprenda a criar sites com HTML.</p>
+      <!-- Card com Progressive Disclosure Pattern -->
+      <div class="card" data-category="frontend">
+        <span class="card-badge">Novo</span>
+        <div class="card-content">
+          <h3>Curso de HTML5</h3>
+          <p>Aprenda a criar sites modernos com HTML5 semântico.</p>
+          <button class="card-toggle">Ver mais ▼</button>
+          <div class="card-details">
+            <p><strong>Duração:</strong> 20 horas</p>
+            <p><strong>Nível:</strong> Iniciante</p>
+            <p><strong>Instrutor:</strong> João Silva</p>
+            <p>Aprenda HTML5 do zero, incluindo elementos semânticos, formulários avançados, APIs HTML5 e muito mais.</p>
+            <button onclick="window.modal.open('Curso de HTML5', 'Entre em contato para se inscrever! <br><br> <strong>Próxima turma:</strong> 15/11/2025<br><strong>Investimento:</strong> R$ 299,00', [{text: 'Fechar', className: 'button'}])">
+              Mais informações
+            </button>
+          </div>
+        </div>
       </div>
-      <div class="card">
-        <h3>Curso de CSS</h3>
-        <p>Estilize suas páginas com CSS moderno.</p>
+
+      <div class="card" data-category="frontend">
+        <div class="card-content">
+          <h3>Curso de CSS3</h3>
+          <p>Estilize suas páginas com CSS moderno.</p>
+          <button class="card-toggle">Ver mais ▼</button>
+          <div class="card-details">
+            <p><strong>Duração:</strong> 25 horas</p>
+            <p><strong>Nível:</strong> Iniciante/Intermediário</p>
+            <p><strong>Instrutor:</strong> Maria Santos</p>
+            <p>Domine CSS3, Flexbox, Grid, animações, transições e design responsivo.</p>
+            <button onclick="window.modal.open('Curso de CSS3', 'Entre em contato para se inscrever! <br><br> <strong>Próxima turma:</strong> 20/11/2025<br><strong>Investimento:</strong> R$ 349,00', [{text: 'Fechar', className: 'button'}])">
+              Mais informações
+            </button>
+          </div>
+        </div>
       </div>
-      <div class="card">
-        <h3>Curso de JavaScript</h3>
-        <p>Dê vida às suas páginas com JS.</p>
+
+      <div class="card" data-category="frontend">
+        <span class="card-badge">Popular</span>
+        <div class="card-content">
+          <h3>Curso de JavaScript</h3>
+          <p>Dê vida às suas páginas com JS.</p>
+          <button class="card-toggle">Ver mais ▼</button>
+          <div class="card-details">
+            <p><strong>Duração:</strong> 40 horas</p>
+            <p><strong>Nível:</strong> Intermediário</p>
+            <p><strong>Instrutor:</strong> Carlos Oliveira</p>
+            <p>JavaScript moderno (ES6+), DOM manipulation, APIs, async/await, e frameworks populares.</p>
+            <button onclick="window.modal.open('Curso de JavaScript', 'Entre em contato para se inscrever! <br><br> <strong>Próxima turma:</strong> 25/11/2025<br><strong>Investimento:</strong> R$ 499,00', [{text: 'Fechar', className: 'button'}])">
+              Mais informações
+            </button>
+          </div>
+        </div>
       </div>
-      <div class="card">
-        <h3>Curso de Python</h3>
-        <p>Aprenda a linguagem de programação mais usada para
-          desenvolvimento de IA's com o novo curso de Python para iniciantes.</p>
+
+      <div class="card" data-category="data">
+        <span class="card-badge">Destaque</span>
+        <div class="card-content">
+          <h3>Curso de Python</h3>
+          <p>A linguagem mais usada para desenvolvimento de IA.</p>
+          <button class="card-toggle">Ver mais ▼</button>
+          <div class="card-details">
+            <p><strong>Duração:</strong> 50 horas</p>
+            <p><strong>Nível:</strong> Iniciante/Avançado</p>
+            <p><strong>Instrutor:</strong> Ana Costa</p>
+            <p>Python do básico ao avançado, incluindo IA, Machine Learning, análise de dados e automação.</p>
+            <button onclick="window.modal.open('Curso de Python', 'Entre em contato para se inscrever! <br><br> <strong>Próxima turma:</strong> 01/12/2025<br><strong>Investimento:</strong> R$ 599,00', [{text: 'Fechar', className: 'button'}])">
+              Mais informações
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-category="backend">
+        <div class="card-content">
+          <h3>Curso de Node.js</h3>
+          <p>Construa aplicações backend escaláveis.</p>
+          <button class="card-toggle">Ver mais ▼</button>
+          <div class="card-details">
+            <p><strong>Duração:</strong> 35 horas</p>
+            <p><strong>Nível:</strong> Intermediário</p>
+            <p><strong>Instrutor:</strong> Pedro Lima</p>
+            <p>Node.js, Express, APIs RESTful, autenticação, banco de dados e deploy.</p>
+            <button onclick="window.modal.open('Curso de Node.js', 'Entre em contato para se inscrever! <br><br> <strong>Próxima turma:</strong> 05/12/2025<br><strong>Investimento:</strong> R$ 549,00', [{text: 'Fechar', className: 'button'}])">
+              Mais informações
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-category="mobile">
+        <span class="card-badge">Novo</span>
+        <div class="card-content">
+          <h3>Curso de React Native</h3>
+          <p>Desenvolva apps mobile com React.</p>
+          <button class="card-toggle">Ver mais ▼</button>
+          <div class="card-details">
+            <p><strong>Duração:</strong> 45 horas</p>
+            <p><strong>Nível:</strong> Intermediário/Avançado</p>
+            <p><strong>Instrutor:</strong> Lucas Ferreira</p>
+            <p>Crie aplicativos iOS e Android com React Native, navegação, APIs e publicação.</p>
+            <button onclick="window.modal.open('Curso de React Native', 'Entre em contato para se inscrever! <br><br> <strong>Próxima turma:</strong> 10/12/2025<br><strong>Investimento:</strong> R$ 649,00', [{text: 'Fechar', className: 'button'}])">
+              Mais informações
+            </button>
+          </div>
+        </div>
       </div>
     </section>
   </main>
+  
+  <script>
+    // Inicializa Search and Filter para a página de cursos
+    document.addEventListener('DOMContentLoaded', () => {
+      new UIPatterns.SearchFilter('course-search', 'filter-tag', '.card');
+    });
+  </script>
 
   <button id="backToTopBtn" title="Voltar ao topo">↑</button>
 
   <footer class="footer">
     © 2025 InfoCursos.
   </footer>
+  <script src="js/ui-patterns.js"></script>
   <script src="js/accessibility.js"></script>
 
   <div vw class="enabled">

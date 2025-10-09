@@ -34,12 +34,33 @@
   <main class="container">
     <h1>Login</h1>
     <div class="form-container">
-      <form>
-        <input type="email" placeholder="E-mail" required />
-        <input type="password" placeholder="Senha" required />
+      <form id="login-form">
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            placeholder="seu@email.com" 
+            required 
+            autocomplete="email"
+          />
+        </div>
 
-        <p class="small-text">
-          Não tem uma conta? <a href="cadastro.html">Cadastre-se</a>
+        <div class="form-group">
+          <label for="password">Senha</label>
+          <input 
+            type="password" 
+            id="password" 
+            name="password" 
+            placeholder="Sua senha" 
+            required 
+            autocomplete="current-password"
+          />
+        </div>
+
+        <p style="text-align: center; margin: 1rem 0;">
+          Não tem uma conta? <a href="cadastro.html" style="color: var(--primary-color); font-weight: bold;">Cadastre-se</a>
         </p>
 
         <button type="submit">Entrar</button>
@@ -52,6 +73,7 @@
   <footer class="footer">
     © 2025 InfoCursos.
   </footer>
+  <script src="js/ui-patterns.js"></script>
   <script src="js/accessibility.js"></script>
 
   <div vw class="enabled">

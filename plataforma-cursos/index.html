@@ -14,6 +14,7 @@
     <nav class="nav">
       <a href="index.html">Início</a>
       <a href="cursos.html">Cursos</a>
+      <a href="ui-patterns-guide.html">Padrões UI</a>
       <a href="noticias.html">Notícias</a>
       <a href="novidades.html">Novidades</a>
       <a href="contatos.html">Contatos</a>
@@ -48,6 +49,44 @@
     <p>
       Explore nossos cursos, fique por dentro das novidades e aproveite tudo o que temos para oferecer.
     </p>
+    
+    <!-- Call-to-Action com feedback visual -->
+    <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap;">
+      <button 
+        onclick="window.location.href='cursos.html'" 
+        style="padding: 1rem 2rem; font-size: 1.1rem; border-radius: 8px; min-width: 200px;"
+      >
+        Ver Cursos
+      </button>
+      <button 
+        onclick="window.toast.show('Em breve você receberá novidades por e-mail!', 'success'); setTimeout(() => window.modal.open('Cadastro de Newsletter', '<div class=\'form-group\'><label>E-mail:</label><input type=\'email\' placeholder=\'seu@email.com\' /></div><p style=\'text-align: center; margin-top: 1rem;\'><button onclick=\'window.modal.close(); window.toast.show(\\\'Inscrito com sucesso!\\\', \\\'success\\\')\'>Inscrever-se</button></p>'), 500)" 
+        style="padding: 1rem 2rem; font-size: 1.1rem; border-radius: 8px; background-color: white; color: var(--primary-color); border: 2px solid var(--primary-color); min-width: 200px;"
+      >
+        Receber Novidades
+      </button>
+    </div>
+
+    <!-- Estatísticas com cards -->
+    <section style="margin-top: 4rem;">
+      <h2 style="text-align: center; margin-bottom: 2rem;">Por que escolher a InfoCursos?</h2>
+      <div class="card-grid">
+        <div class="card" style="text-align: center;">
+          <div style="font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem;">📚</div>
+          <h3>500+ Cursos</h3>
+          <p>Grande variedade de cursos em diferentes áreas</p>
+        </div>
+        <div class="card" style="text-align: center;">
+          <div style="font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem;">👥</div>
+          <h3>50.000+ Alunos</h3>
+          <p>Comunidade ativa de estudantes</p>
+        </div>
+        <div class="card" style="text-align: center;">
+          <div style="font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem;">⭐</div>
+          <h3>4.8 Avaliação</h3>
+          <p>Alta satisfação dos nossos alunos</p>
+        </div>
+      </div>
+    </section>
   </main>
 
   <button id="backToTopBtn" title="Voltar ao topo">↑</button>
@@ -56,6 +95,7 @@
     © 2025 InfoCursos. Todos os direitos reservados.
   </footer>
   
+  <script src="js/ui-patterns.js"></script>
   <script src="js/accessibility.js"></script>
 
   <div vw class="enabled">
