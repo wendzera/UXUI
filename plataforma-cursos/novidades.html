@@ -33,16 +33,168 @@
 
   <main class="container">
     <h1>Novidades na Plataforma</h1>
-    <section class="card-grid">
-      <div class="card">
-        <h3>Nova interface lançada</h3>
-        <p>Mais moderna e responsiva!</p>
-      </div>
-      <div class="card">
-        <h3>Certificados automáticos</h3>
-        <p>Agora você pode gerar seu certificado diretamente.</p>
+    <p style="text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 2rem;">
+      Fique por dentro das últimas atualizações e melhorias da InfoCursos
+    </p>
+
+    <!-- Destaques -->
+    <section style="margin-bottom: 3rem;">
+      <div class="card" style="background: linear-gradient(135deg, var(--primary-color) 0%, #6a5aff 100%); color: white; padding: 2rem;">
+        <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+          <div style="font-size: 3rem;">🎉</div>
+          <div style="flex: 1; min-width: 250px;">
+            <h2 style="color: white; margin-bottom: 0.5rem;">Grande Atualização de Interface!</h2>
+            <p style="font-size: 1.1rem; opacity: 0.95;">
+              Nossa plataforma ganhou um novo visual, mais moderno e acessível. Experiência totalmente renovada!
+            </p>
+            <small style="opacity: 0.8;">📅 Lançado em 15 de Janeiro de 2025</small>
+          </div>
+        </div>
       </div>
     </section>
+
+    <!-- Grade de novidades -->
+    <section class="card-grid">
+      <div class="card">
+        <div class="card-badge">NOVO</div>
+        <div style="font-size: 2.5rem; text-align: center; margin-bottom: 1rem;">📜</div>
+        <h3>Certificados Automáticos</h3>
+        <p>Ao concluir um curso, seu certificado é gerado automaticamente e fica disponível para download imediato no seu perfil.</p>
+        <button class="card-toggle" onclick="this.parentElement.classList.toggle('expanded')">Ver mais</button>
+        <div class="card-details">
+          <ul style="text-align: left; padding-left: 1.5rem; line-height: 1.8;">
+            <li>Certificados em PDF de alta qualidade</li>
+            <li>Validação online via QR Code</li>
+            <li>Compartilhamento direto no LinkedIn</li>
+            <li>Histórico completo de certificações</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-badge">NOVO</div>
+        <div style="font-size: 2.5rem; text-align: center; margin-bottom: 1rem;">♿</div>
+        <h3>Recursos de Acessibilidade</h3>
+        <p>Implementamos diversos recursos para tornar a plataforma acessível a todos os usuários.</p>
+        <button class="card-toggle" onclick="this.parentElement.classList.toggle('expanded')">Ver mais</button>
+        <div class="card-details">
+          <ul style="text-align: left; padding-left: 1.5rem; line-height: 1.8;">
+            <li>Filtros para daltonismo (Protanopia, Deuteranopia, Tritanopia)</li>
+            <li>Controles de tamanho de fonte</li>
+            <li>Integração com VLibras (Libras)</li>
+            <li>Navegação por teclado otimizada</li>
+            <li>Suporte a leitores de tela</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div style="font-size: 2.5rem; text-align: center; margin-bottom: 1rem;">📱</div>
+        <h3>Design Responsivo</h3>
+        <p>Acesse a plataforma de qualquer dispositivo: desktop, tablet ou smartphone com interface otimizada.</p>
+        <button class="card-toggle" onclick="this.parentElement.classList.toggle('expanded')">Ver mais</button>
+        <div class="card-details">
+          <p style="text-align: left; line-height: 1.8;">
+            Nossa nova interface se adapta perfeitamente a qualquer tamanho de tela, garantindo uma experiência fluida em todos os dispositivos. Estude onde e quando quiser!
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div style="font-size: 2.5rem; text-align: center; margin-bottom: 1rem;">🎯</div>
+        <h3>Sistema de Busca Melhorado</h3>
+        <p>Encontre cursos mais rapidamente com nosso novo sistema de busca e filtros inteligentes.</p>
+        <button class="card-toggle" onclick="this.parentElement.classList.toggle('expanded')">Ver mais</button>
+        <div class="card-details">
+          <ul style="text-align: left; padding-left: 1.5rem; line-height: 1.8;">
+            <li>Busca por palavra-chave</li>
+            <li>Filtros por categoria e nível</li>
+            <li>Sugestões personalizadas</li>
+            <li>Resultados mais relevantes</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div style="font-size: 2.5rem; text-align: center; margin-bottom: 1rem;">⚡</div>
+        <h3>Performance Otimizada</h3>
+        <p>Navegação mais rápida e fluida com melhorias significativas de performance.</p>
+        <button class="card-toggle" onclick="this.parentElement.classList.toggle('expanded')">Ver mais</button>
+        <div class="card-details">
+          <p style="text-align: left; line-height: 1.8;">
+            Reduzimos o tempo de carregamento das páginas em até 60% e implementamos técnicas modernas de otimização para uma experiência mais ágil.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div style="font-size: 2.5rem; text-align: center; margin-bottom: 1rem;">💬</div>
+        <h3>Notificações em Tempo Real</h3>
+        <p>Receba avisos instantâneos sobre atualizações de cursos, novas aulas e mensagens.</p>
+        <button class="card-toggle" onclick="this.parentElement.classList.toggle('expanded')">Ver mais</button>
+        <div class="card-details">
+          <ul style="text-align: left; padding-left: 1.5rem; line-height: 1.8;">
+            <li>Alertas de novos conteúdos</li>
+            <li>Lembretes de aulas agendadas</li>
+            <li>Mensagens de instrutores</li>
+            <li>Atualizações de cursos em andamento</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div style="font-size: 2.5rem; text-align: center; margin-bottom: 1rem;">🎓</div>
+        <h3>Dashboard do Aluno</h3>
+        <p>Novo painel personalizado para acompanhar seu progresso e gerenciar seus cursos.</p>
+        <button class="card-toggle" onclick="this.parentElement.classList.toggle('expanded')">Ver mais</button>
+        <div class="card-details">
+          <ul style="text-align: left; padding-left: 1.5rem; line-height: 1.8;">
+            <li>Visão geral do progresso</li>
+            <li>Cursos em andamento</li>
+            <li>Estatísticas de aprendizado</li>
+            <li>Próximas aulas e prazos</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div style="font-size: 2.5rem; text-align: center; margin-bottom: 1rem;">🔒</div>
+        <h3>Segurança Aprimorada</h3>
+        <p>Novos recursos de segurança para proteger sua conta e seus dados pessoais.</p>
+        <button class="card-toggle" onclick="this.parentElement.classList.toggle('expanded')">Ver mais</button>
+        <div class="card-details">
+          <ul style="text-align: left; padding-left: 1.5rem; line-height: 1.8;">
+            <li>Autenticação de dois fatores</li>
+            <li>Criptografia de dados</li>
+            <li>Histórico de acessos</li>
+            <li>Conformidade com LGPD</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div style="font-size: 2.5rem; text-align: center; margin-bottom: 1rem;">🌙</div>
+        <h3>Modo Escuro</h3>
+        <p>Em breve: alternância entre modo claro e escuro para sua preferência visual.</p>
+        <button class="card-toggle" onclick="this.parentElement.classList.toggle('expanded')">Ver mais</button>
+        <div class="card-details">
+          <p style="text-align: left; line-height: 1.8;">
+            Estamos trabalhando em um modo escuro completo para reduzir o cansaço visual durante estudos noturnos. Aguarde!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <div style="background-color: #f8f9fa; padding: 2rem; border-radius: 10px; text-align: center; margin-top: 3rem;">
+      <h2 style="margin-bottom: 1rem;">Fique por dentro de todas as novidades!</h2>
+      <p style="color: #666; margin-bottom: 1.5rem;">
+        Inscreva-se na nossa newsletter e receba atualizações direto no seu e-mail.
+      </p>
+      <button onclick="window.location.href='cadastro.html'" style="padding: 1rem 2rem; font-size: 1.1rem;">
+        Inscrever-se Agora
+      </button>
+    </div>
   </main>
 
   <button id="backToTopBtn" title="Voltar ao topo">↑</button>
